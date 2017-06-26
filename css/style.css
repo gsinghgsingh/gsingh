@@ -1,0 +1,27 @@
+.image img{
+max-height: 300px;
+max-width: 400px;
+
+}
+
+.row{
+float: left;
+width: 250px;
+align-content: center;
+padding: 30px;
+
+}
+.top{
+position: fixed;
+background-color: white;
+width: 100%;
+top: 0;
+padding-top: 10px;
+border-bottom: black;
+border-bottom-style: solid;
+border-width: 1px;
+
+}
+.filler{
+padding-top: 100px;
+}
