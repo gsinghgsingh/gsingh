@@ -48,6 +48,7 @@ $.get(url, function(data){
   var user = "";
   var library = "";
   var profile = "";
+  var album = "";
   $.each( items, function( key, value ) {
 
    user = value.user.userName;

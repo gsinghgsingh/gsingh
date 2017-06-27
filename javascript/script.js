@@ -15,7 +15,7 @@ $.get(url, function(data){
   //console.log(data.rss.channel);
   console.log(data.rss.channel.item);
   var items = data.rss.channel.item;
-  var html = "<table class='wrapper'>";
+  var html = "<div class='wrapper'>";
   var image = "";
   var user = "";
   var library = "";
@@ -27,22 +27,22 @@ $.get(url, function(data){
    library = "http://s8.photobucket.com/user/" + user + "/library/";
    profile = "http://s8.photobucket.com/user/" + user + "/profile/";
    date = value.pubDate;
-   html += "<tr class='row" + key + "'>";
+   html += "<div class='row'>";
 
-   html += "<td class='cell0'><div class='username'>Username: " + user + "</div>";
-     html += "</td>";
-    html += "<td class='cell1'><div class='date'>Date: " + date + "</div>";
-     html += "</td>";
-   html += "<td class='cell2'><div class='profile'><a href='" + profile + "' target='_blank'>Go To Profile</a></div>";
-     html += "</td>";
-   html += "<td class='cell3'><div class='library'><a href='" + library + "'  target='_blank'>Go To Library</a></div>";
-     html += "</td>";
-   html += "<td class='cell4'><div class='library'><a href='feed.html?q=" + user + "'  target='_blank'>View Recents</a></div>";
-     html += "</td>";
-   html += "<td class='cell5'><div class='image'><img src='" + image + "'></div>";
-     html += "</td></tr>";
+   html += "<div class='cell0'><div class='username'>Username: " + user + "</div>";
+     html += "</div>";
+    html += "<div class='cell1'><div class='date'>Date: " + date + "</div>";
+     html += "</div>";
+   html += "<div class='cell2'><div class='profile'><a href='" + profile + "' target='_blank'>Go To Profile</a></div>";
+     html += "</div>";
+   html += "<div class='cell3'><div class='library'><a href='" + library + "'  target='_blank'>Go To Library</a></div>";
+     html += "</div>";
+   html += "<div class='cell4'><div class='library'><a href='feed.html?q=" + user + "'  target='_blank'>View Recents</a></div>";
+     html += "</div>";
+   html += "<div class='cell5'><div class='image'><img src='" + image + "'></div>";
+     html += "</div></div>";
   });
- html += "</table>";
+ html += "</div>";
  
 $("div.filler").html(html);
    });

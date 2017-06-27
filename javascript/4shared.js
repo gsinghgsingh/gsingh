@@ -47,6 +47,7 @@ $.get(url, function(data){
   var user = "";
   var library = "";
   var profile = "";
+  var album = "";
   $.each( items, function( key, value ) {
 
    user = value.user.userName;
@@ -67,9 +68,12 @@ $.get(url, function(data){
 html += "<div class='cell3'><div class='library'>No Library :(</div>";
      html += "</div>";
    } else {
-   html += "<div class='cell3'><div class='library'><a href='" + library + "'  target='_blank'>Go To Library</a></div>";
+   html += "<div class='cell3'><div class='library'><a href='" + library + "'  target='_blank'>View Album On 4Share</a></div>";
      html += "</div>";
-    
+    album = value.dirUrl;
+    album = album.replace("/folder/","");
+    html += "<div class='cell3a'><div class='library'><a href='./scrapealbum.html?q=" + album + "'  target='_blank'>View Full Album Here (Usually Faster)</a></div>";
+     html += "</div>";
    }
    html += "<div class='cell5'><div class='image'><a href='" + value.d1PageUrl + "' target='_blank'><img src='" + image + "'></a></div>";
      html += "</div></div>";
