@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     
-    $("select").change(function(){
-		$(".search input").val($("select").val());
+    $("select.example").change(function(){
+		$(".search input").val($("select.example").val());
 		$(".offset input").val("0");
     
     });
@@ -15,7 +15,8 @@ $( document ).ready(function() {
 		$(".offset input").val("0");
 		$(".count input").val("100");
 		$(".search input").val("");
-		$("select").val("Search Examples (Tweak For Different Results)");
+		$("select.example").val("Search Examples (Tweak For Different Results)");
+		$("select.sort").val("&sort=time%2Cdesc");
     });
     
     $(".search input").keypress(function(){
@@ -23,6 +24,10 @@ $( document ).ready(function() {
     
     });
     
+    $("select.sort").change(function(){
+    	$(".offset input").val("0");
+    
+    });
     
 //Begin scrape function    
     
@@ -31,7 +36,8 @@ $( document ).ready(function() {
       var query = $("div.search input").val();
       var count = $("div.count input").val();
       var offset = $("div.offset input").val();
-      var url = "../pr.php?https://www.4shared.com/web/rest/v1_2/files?category=3&sort=time%2Cdesc&view=web";
+      var sort = $("select.sort").val();
+      var url = "../pr.php?https://www.4shared.com/web/rest/v1_2/files?category=3&view=web" + sort;
 
      if (query == null || query == ""){
      } else {

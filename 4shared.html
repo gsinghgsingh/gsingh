@@ -11,7 +11,7 @@
 <div class="top">
   <div class="parameters">
   <div>
-		<select name="example">
+		<select class="example">
 		<option>Search Examples (Tweak For Different Results)</option>
 		<option >P_20170511_150209.jpg</option>
 		<option>quicksquare_20173172238961.jpg</option>
@@ -37,6 +37,15 @@
 		<option>MAKEUP_20170514181747_save.jpg</option>
 		<option>PointBlank_20170509_071057.jpg</option>
 		<option>P_20170521</option>
+		</select>
+		<select class="sort">
+		<option value="&sort=time%2Cdesc" selected="selected">Sort Newest First</option>
+		<option value="&sort=time%2Casc">Sort Oldest First</option>
+		<option value="&sort=name%2Casc">Sort A-Z</option>
+		<option value="&sort=name%2Cdesc">Sort Z-A</option>
+		<option value="&sort=size%2Casc">Sort Smallest First</option>
+		<option value="&sort=size%2Cdesc">Sort Biggest First</option>
+		<option value="&">Don't Sort (4Share's Default)</option>
 		</select>
    </div>
    <div class="search">Search Query: <input type="text" value=""></div>
