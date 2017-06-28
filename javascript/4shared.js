@@ -1,11 +1,12 @@
 $( document ).ready(function() {
     
     $("select").change(function(){
-    $(".search input").val($("select").val());
+		$(".search input").val($("select").val());
+		$(".offset input").val("0");
     
     });
     $(".action .reset-params a").click(function(){
-        console.log("works");
+        
 		$(".offset input").val("0");
     });
     
@@ -17,7 +18,10 @@ $( document ).ready(function() {
 		$("select").val("Search Examples (Tweak For Different Results)");
     });
     
+    $(".search input").keypress(function(){
+    	$(".offset input").val("0");
     
+    });
     
     
 //Begin scrape function    
@@ -70,7 +74,11 @@ $.get(url, function(data){
   var library = "";
   var profile = "";
   var album = "";
-  $.each( items, function( key, value ) {
+  if (data.items.length == 0){
+  	html += "<div class='sorry'>Sorry, no results. Try tweaking your Search Query and try again.</div>";
+  } else {
+  	console.log("Yay Results!");
+  	$.each( items, function( key, value ) {
 
    user = value.user.userName;
    image = value.thumbnailUrl + ".jpg";
@@ -100,7 +108,10 @@ html += "<div class='cell3'><div class='library'>No Library :(</div>";
    html += "<div class='cell5'><div class='image'><a href='" + value.d1PageUrl + "' target='_blank'><img src='" + image + "'></a></div>";
      html += "</div></div>";
   });
- html += "</div>";
+  
+  }
+   html += "</div>";
+
  
 
 $("div.filler").html(html);
