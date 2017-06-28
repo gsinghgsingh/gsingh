@@ -35,6 +35,7 @@ function getURLParameter(name) {
                 } else {
                     console.log(value.children[0].children[2]);
                     imageObject[key] = value.children[0].children[2];
+                   
                 }
             });
             console.log(imageObject);
@@ -45,10 +46,15 @@ function getURLParameter(name) {
             var user = "";
             var library = "";
             var profile = "";
+            var tempImg = "";
+            
             $.each(imageObject, function(key, value) {
+                tempImg = value.src;
                 image = value.src;
+                tempImg = tempImg.replace(/\/[s][0-9][0-9]\//, "/");
+               
                 html += "<div class='row'>";
-                html += "<div class='cell5'><div class='image'><img src='" + image + "'></div>";
+                html += "<div class='cell5'><div class='image'><a href='" + image + "' target='_blank'><img src='" + tempImg + "'></a></div>";
                 html += "</div></div>";
             });
 

@@ -117,6 +117,7 @@
 	  header("Content-Type: ".$type);
 	  $temp = html_to_obj($response);
           $temp2 = $temp['children'][1];
+          //$temp2 = preg_replace('/\\/s[0-9][0-9]\\//u', '/', $temp2);
 	 // echo html_to_obj($response);
           //echo '<pre>'; print_r($temp2); echo '</pre>';
           echo json_encode($temp2);
