@@ -33,3 +33,21 @@ color:white;
 a {
  color:white;
 }
+
+a:visited {
+ color: orange;
+}
+
+.parameters {
+float: left;
+padding-left: 5px;
+
+}
+.search input{
+  width:300px;
+}
+
+.action div{
+  float:left;
+  padding-right:7px;
+}

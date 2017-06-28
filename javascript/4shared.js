@@ -1,5 +1,27 @@
 $( document ).ready(function() {
     
+    $("select").change(function(){
+    $(".search input").val($("select").val());
+    
+    });
+    $(".action .reset-params a").click(function(){
+        console.log("works");
+		$(".offset input").val("0");
+    });
+    
+    $(".action .reset-all a").click(function(){
+        console.log("works");
+		$(".offset input").val("0");
+		$(".count input").val("100");
+		$(".search input").val("");
+		$("select").val("Search Examples (Tweak For Different Results)");
+    });
+    
+    
+    
+    
+//Begin scrape function    
+    
    $( "div.button input" ).click(function() {
       $("div.filler").html("");
       var query = $("div.search input").val();
@@ -83,10 +105,13 @@ html += "<div class='cell3'><div class='library'>No Library :(</div>";
 
 $("div.filler").html(html);
 //console.log($("div.filler div.cell3 div.library a:visited"));
+
+
+
    });
 
 
    });
 
-
+ 
 });
