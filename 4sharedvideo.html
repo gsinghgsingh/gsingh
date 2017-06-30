@@ -9,11 +9,50 @@
 <body>
 
 <div class="top">
- <div class="search">Search Query: <input type="text"></div>
- <div class="count">How many video results? <input type="text" value="100"></div>
- <div class="offset">Number of result to skip? <input type="text" value="0"></div>
-   <div class="button">Submit Search: <input type="submit" value="Submit"></div>
-
+  <div class="parameters">
+  <div>
+		<select class="example">
+		<option>Search Examples (Tweak For Different Results)</option>
+		<option >received_</option>
+		<option >FOTORUS-20170501</option>
+		<option >mobizen_20170427</option>
+		<option >ZDYNAMIC_20170501</option>
+		<option >XiaoYing_Video_</option>
+		<option >QuickCam_</option>
+		<option >C360VID_20170501</option>
+		<option >CORTAR_20170429</option>
+		<option >QUIK_20170509</option>
+		<option >TRIM_20160419_084940.mp4</option>
+		<option >V_20170515_214837.mp4</option>
+		<option >20170304_105940.mp4</option>
+		<option >img_0019.mp4</option>
+		<option >VID_20170517_182525.mp4</option>
+		<option >mv_20170131233001.mp4</option>
+		<option >VID20170521201615.mp4</option>
+		<option >Video_20170521233143914_by_videosho</option>
+		<option >MiniMovie_Graceful_170516.mp4</option>
+		<option >VideoShow_20170520200649177.3gp</option>
+		</select>
+		<select class="sort">
+		<option value="&sort=time%2Cdesc" selected="selected">Sort Newest First</option>
+		<option value="&sort=time%2Casc">Sort Oldest First</option>
+		<option value="&sort=name%2Casc">Sort A-Z</option>
+		<option value="&sort=name%2Cdesc">Sort Z-A</option>
+		<option value="&sort=size%2Casc">Sort Smallest First</option>
+		<option value="&sort=size%2Cdesc">Sort Biggest First</option>
+		<option value="&">Don't Sort (4Share's Default)</option>
+		</select>
+   </div>
+   <div class="search">Search Query: <input type="text" value=""></div>
+   <div class="count">How many Videos? <input type="text" value="100"></div>
+   <div class="offset">Number of result to skip? <input type="text" value="0"></div>
+   <div class="action">
+	   <div class="reset-params"><a href="#">Reset Skip</a></div>
+	   <div class="reset-all"><a href="#">Reset Everything</a></div>
+	   <div class="button">Submit Search: <input type="submit" value="Submit"></div>
+   </div>
+  
+  </div>
 </div>
   <div class="filler"></div>
 </body>

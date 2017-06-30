@@ -1,11 +1,43 @@
 $( document ).ready(function() {
     
+    $("select.example").change(function(){
+		$(".search input").val($("select.example").val());
+		$(".offset input").val("0");
+    
+    });
+    $(".action .reset-params a").click(function(){
+        
+		$(".offset input").val("0");
+    });
+    
+    $(".action .reset-all a").click(function(){
+        console.log("works");
+		$(".offset input").val("0");
+		$(".count input").val("100");
+		$(".search input").val("");
+		$("select.example").val("Search Examples (Tweak For Different Results)");
+		$("select.sort").val("&sort=time%2Cdesc");
+    });
+    
+    $(".search input").keypress(function(){
+    	$(".offset input").val("0");
+    
+    });
+    
+    $("select.sort").change(function(){
+    	$(".offset input").val("0");
+    
+    });
+  
+  //Begin scraping thumbs
+  
    $( "div.button input" ).click(function() {
       $("div.filler").html("");
       var query = $("div.search input").val();
       var count = $("div.count input").val();
       var offset = $("div.offset input").val();
-      var url = "../pr.php?https://www.4shared.com/web/rest/v1_2/files?category=2&sort=time%2Cdesc&view=web";
+      var sort = $("select.sort").val();
+      var url = "../pr.php?https://www.4shared.com/web/rest/v1_2/files?category=2&view=web" + sort;
 
      if (query == null || query == ""){
      } else {
