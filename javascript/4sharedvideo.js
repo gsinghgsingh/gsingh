@@ -101,10 +101,14 @@ html += "<div class='cell3'><div class='library'>No Library :(</div>";
    } else {
    html += "<div class='cell3'><div class='library'><a href='" + library + "'  target='_blank'>Go To Library</a></div>";
      html += "</div>";
+      album = value.dirUrl;
+    album = album.replace("/folder/","");
+    html += "<div class='cell3a'><div class='library'><a href='./scrapealbum.html?q=" + album + "&user=" + user + "'  target='_blank'>Full Album</a></div>";
+     html += "</div>";
     
    }
      html += "</div>";
-   html += "<div class='cell2a'><div class='filename'>Filename: " + value.fileName + "</div>";
+   html += "<div class='cell2a'><div class='filename'>" + value.fileName + "</div>";
      html += "</div>";
    html += "<div class='cell2a'><div class='filename'>Length: " + value.metaInfo.duration + "</div>";
      html += "</div>";
