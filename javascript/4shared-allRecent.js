@@ -94,7 +94,7 @@ function getURLParameter(name) {
 						 	html += "</div>";
 					} else {	 
 						
-						  html += "<div class='cell3a'><div class='library'><a href='./scrapealbum.html?q=" + album + "&user=" + user + "'  target='_blank'>View Full Album</a></div>";
+						  html += "<div class='cell3a'><div class='library'><a href='./scrapealbum.html?q=" + album + "&user=" + library + "'  target='_blank'>View Full Album</a></div>";
 						    html += "</div>";
 					}
 					

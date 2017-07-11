@@ -108,7 +108,7 @@ html += "<div class='cell3'><div class='library'>No Library :(</div>";
      html += "</div>";
     album = value.dirUrl;
     album = album.replace("/folder/","");
-    html += "<div class='cell3a'><div class='library'><a href='./scrapealbum.html?q=" + album + "&user=" + user + "'  target='_blank'>View Full Album</a></div>";
+    html += "<div class='cell3a'><div class='library'><a href='./scrapealbum.html?q=" + album + "&user=" + library + "'  target='_blank'>View Full Album</a></div>";
      html += "</div>";
    }
    html += "<div class='cell2a'><div class='filename'>" + value.fileName + "</div>";
